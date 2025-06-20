@@ -4,8 +4,9 @@ This repository contains a simple Node.js project for collecting user
 requirements. The interface is presented in Chinese. The application
 provides two main pages:
 
-* **User survey** – a small form where users can submit their name, e‑mail and
-  answer a sample question.
+* **User survey** – a 30‑question form presented one question at a time with a
+  progress bar. After answering all questions, users provide their contact
+  information (name, e‑mail, WeChat and phone).
 * **Admin panel** – displays a table with all collected submissions.
 
 ## Running the server

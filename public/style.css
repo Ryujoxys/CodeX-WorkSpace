@@ -1,3 +1,6 @@
 body { font-family: Arial, sans-serif; margin: 40px; }
 label { display: block; margin: 8px 0; }
 button { padding: 6px 12px; }
+#question-container { margin-bottom: 20px; }
+#progress-wrapper { margin-bottom: 20px; }
+.option { display: block; margin: 4px 0; }

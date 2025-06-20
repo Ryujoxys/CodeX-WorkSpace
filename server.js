@@ -1,7 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const querystring = require('querystring');
 
 const DATA_FILE = path.join(__dirname, 'data', 'users.json');
 const PORT = process.env.PORT || 3000;
@@ -20,11 +19,18 @@ function serveStatic(res, filePath, contentType='text/html') {
 
 function handleForm(req, res) {
   let body = '';
-  req.on('data', chunk => {
-    body += chunk.toString();
-  });
+  req.on('data', chunk => { body += chunk.toString(); });
   req.on('end', () => {
-    const data = querystring.parse(body);
+    let data;
+    if (req.headers['content-type'] && req.headers['content-type'].includes('application/json')) {
+      try { data = JSON.parse(body); } catch(e) { data = {}; }
+    } else {
+      data = {};
+      body.split('&').forEach(pair => {
+        const [k,v] = pair.split('=');
+        data[decodeURIComponent(k)] = decodeURIComponent(v||'');
+      });
+    }
     fs.readFile(DATA_FILE, (err, file) => {
       let users = [];
       if (!err) {
@@ -46,7 +52,7 @@ function serveAdmin(res) {
     if (!err) {
       try { users = JSON.parse(file); } catch(e) {}
     }
-    let rows = users.map(u => `<tr><td>${u.name||''}</td><td>${u.email||''}</td><td>${u.answer||''}</td></tr>`).join('\n');
+    let rows = users.map(u => `<tr><td>${u.name||''}</td><td>${u.email||''}</td><td>${u.wechat||''}</td><td>${u.phone||''}</td><td>${JSON.stringify(u.answers||u.answer||'')}</td></tr>`).join('\n');
     let html = `<!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +67,7 @@ th,td{border:1px solid #ddd;padding:8px;}
 <body>
 <h1>管理员面板</h1>
 <table>
-<tr><th>姓名</th><th>电子邮件</th><th>答案</th></tr>
+<tr><th>姓名</th><th>电子邮件</th><th>微信号</th><th>手机号</th><th>答案</th></tr>
 ${rows}
 </table>
 </body>
