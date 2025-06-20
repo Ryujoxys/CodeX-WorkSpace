@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户调查</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>用户调查</h1>
+<form action="/submit" method="POST">
+  <label>姓名：<input type="text" name="name" required></label><br>
+  <label>电子邮件：<input type="email" name="email" required></label><br>
+  <label>您感兴趣的是什么？
+    <select name="answer">
+      <option value="option1">选项 1</option>
+      <option value="option2">选项 2</option>
+      <option value="option3">选项 3</option>
+    </select>
+  </label><br>
+  <button type="submit">提交</button>
+</form>
+</body>
+</html>
