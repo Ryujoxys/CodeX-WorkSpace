@@ -15,40 +15,40 @@
 </main>
 <script>
 const questions = [
-  {id:1,question:"您对当前身心灵行业整体发展的了解程度如何？",options:["A. 完全不了解","B. 略有了解","C. 一般了解","D. 较为了解","E. 非常熟悉"]},
-  {id:2,question:"您最感兴趣的身心灵细分领域是？（可多选）",options:["A. 冥想/正念","B. 能量疗愈","C. 占卜/塔罗/占星","D. 灵性课程与工作坊","E. 传统东方养生（如气功、瑜伽）","F. 其它"],multi:true},
-  {id:3,question:"选择身心灵行业创业的主要动机是什么？",options:["A. 个人信仰与热情","B. 市场潜力","C. 寻找可持续商业模式","D. 社会影响力","E. 其他"]},
-  {id:4,question:"您的创业项目当前所处阶段？",options:["A. 概念/灵感阶段","B. 市场调研阶段","C. MVP 已完成","D. 已有付费用户","E. 已实现规模化营收"]},
-  {id:5,question:"目前团队规模是多少？",options:["A. 仅本人","B. 2–5 人","C. 6–10 人","D. 11–20 人","E. 20 人以上"]},
-  {id:6,question:"您对项目商业模式的清晰度如何？",options:["A. 尚不确定","B. 有初步构想","C. 已确定但未验证","D. 已验证并持续优化","E. 非常清晰且成熟"]},
-  {id:7,question:"期望在多长时间内实现正向现金流？",options:["A. 6 个月内","B. 6–12 个月","C. 1–2 年","D. 2–3 年","E. 无明确时间表"]},
-  {id:8,question:"您可接受的创业风险程度是？",options:["A. 极低（保守）","B. 较低","C. 中等","D. 较高","E. 极高（激进）"]},
-  {id:9,question:"目前感受到的最大创业挑战是什么？",options:["A. 资金","B. 市场定位","C. 用户获取","D. 技术/产品研发","E. 合规与伦理"]},
-  {id:10,question:"您认为未来两年身心灵行业的消费需求趋势如何？",options:["A. 显著下降","B. 略有下降","C. 基本持平","D. 略有增长","E. 强劲增长"]},
-  {id:11,question:"在品牌塑造中，您更看重哪一方面？",options:["A. 产品功效","B. 灵性故事与文化","C. KOL/KOC 口碑","D. 价格优势","E. 视觉设计"]},
-  {id:12,question:"您计划如何实现产品差异化？",options:["A. 独家技术/方法","B. 个性化定制","C. 社群运营","D. 价格策略","E. 其他"]},
-  {id:13,question:"对于 AI/数据分析在身心灵产品中的应用，您的态度是？",options:["A. 强烈反对","B. 谨慎观望","C. 中立","D. 积极尝试","E. 已深度整合"]},
-  {id:14,question:"您对行业法规与伦理审查的关注度？",options:["A. 几乎不关注","B. 一般关注","C. 较为关注","D. 高度关注","E. 已建立合规体系"]},
-  {id:15,question:"个人日常是否坚持身心灵相关实践？",options:["A. 从不","B. 偶尔","C. 每周 1–2 次","D. 每周 3–5 次","E. 每天"]},
-  {id:16,question:"您对外部导师/顾问支持的需求程度？",options:["A. 无需求","B. 低","C. 中","D. 高","E. 迫切需要"]},
-  {id:17,question:"可接受的年度咨询？",options:["A. <$2,000","B. $2,000–5,000","C. $5,000–10,000","D. $10,000–20,000","E. >$20,000"]},
-  {id:18,question:"您倾向的核心产品形态是？",options:["A. 线上课程","B. 线下工作坊/活动","C. 数字应用/平台","D. 实体产品（书籍、器具）","E. 综合解决方案"]},
-  {id:19,question:"您对市场竞争饱和度的担忧程度？",options:["A. 毫无担忧","B. 轻度担忧","C. 中度担忧","D. 较高担忧","E. 极度担忧"]},
-  {id:20,question:"衡量创业成功最重要的指标是？",options:["A. 收入与利润","B. 用户满意度","C. 社会影响力","D. 个人成长","E. 投资人回报"]},
-  {id:21,question:"当产品/市场验证不佳时，您对“转型 pivot”的态度？",options:["A. 坚决不转","B. 难以改变","C. 视情况而定","D. 乐于尝试","E. 已准备多套方案"]},
-  {id:22,question:"未来是否计划拓展国际市场？",options:["A. 完全不考虑","B. 暂无计划","C. 3 年内考虑","D. 1–2 年内启动","E. 已在进行中"]},
-  {id:23,question:"您认为社群建设在业务中的重要性？",options:["A. 无关紧要","B. 可有可无","C. 一般重要","D. 非常重要","E. 核心战略"]},
-  {id:24,question:"您是否有众筹或预售经验？",options:["A. 无","B. 计划尝试","C. 正在筹备","D. 有一次成功经验","E. 多次成功经验"]},
-  {id:25,question:"您的主要学习方式偏好？",options:["A. 视频课程","B. 文字资料/书籍","C. 线下培训","D. 1:1 导师","E. 社群互助"]},
-  {id:26,question:"在运营决策中使用数据分析的频率？",options:["A. 从不","B. 偶尔","C. 每月","D. 每周","E. 每天/实时"]},
-  {id:27,question:"如果加入我们的会员服务，您最需要的支持是？",options:["A. 融资对接","B. 业务导师","C. 市场渠道","D. 技术资源","E. 品牌宣传"]},
-  {id:28,question:"您对企业愿景的规划时间维度？",options:["A. <1 年","B. 1–3 年","C. 3–5 年","D. 5–10 年","E. 10 年以上"]},
-  {id:29,question:"您愿意投入的个人时间与精力（每周）？",options:["A. <10 小时","B. 10–20 小时","C. 20–40 小时","D. 40–60 小时","E. 全职投入"]},
-  {id:30,question:"对与其他创业者或企业合作的兴趣？",options:["A. 完全没兴趣","B. 低度兴趣","C. 视机会而定","D. 高度兴趣","E. 已在积极寻找合作"]}
+  {id:1,dimension:"profile_experience",type:"single",question:"您在身心灵内容创作领域的从业年限？",options:["A. 少于 1 年","B. 1–3 年","C. 3–5 年","D. 5–10 年","E. 10 年以上"]},
+  {id:2,dimension:"channel_mix",type:"multi",question:"您目前运营的主要自媒体平台是？（可多选）",options:["A. 小红书","B. 抖音 / TikTok","C. 公众号","D. B 站 / YouTube","E. Podcast / 音频平台","F. 其他"]},
+  {id:3,dimension:"audience_size",type:"single",question:"当前所有渠道累计粉丝规模？",options:["A. <1,000","B. 1,000–10,000","C. 1–5 万","D. 5–20 万","E. 20 万以上"]},
+  {id:4,dimension:"content_frequency",type:"single",question:"月均内容产出频次？",options:["A. <4 条","B. 4–8 条","C. 9–15 条","D. 16–30 条","E. 30 条以上"]},
+  {id:5,dimension:"pain_points",type:"multi",question:"在内容创作过程中，您遇到的主要痛点是？（可多选）",options:["A. 时间管理","B. 选题灵感枯竭","C. 剪辑 / 技术难题","D. 流量获取困难","E. 变现方案不足"]},
+  {id:6,dimension:"industry_knowledge",type:"single",question:"您对身心灵知识体系的掌握程度？",options:["A. 完全小白","B. 入门了解","C. 基础熟悉","D. 深度学习","E. 行业专家"]},
+  {id:7,dimension:"learning_interests",type:"multi",question:"您最想深入学习的身心灵主题是？（可多选）",options:["A. 冥想 / 正念","B. 能量疗愈","C. 塔罗 / 占星","D. 灵性工作坊设计","E. 东方养生（瑜伽 / 气功）","F. 其他"]},
+  {id:8,dimension:"ai_usage",type:"single",question:"您当前使用 AI 辅助创作的频率？",options:["A. 从不","B. 偶尔尝试","C. 每月使用","D. 每周使用","E. 每日使用"]},
+  {id:9,dimension:"ai_tools",type:"multi",question:"您已使用或感兴趣的 AI 工具有哪些？（可多选）",options:["A. 文案 / 脚本生成","B. 图像生成","C. 视频生成 / 剪辑","D. 语音合成 / 配音","E. 数据分析 / 选题洞察","F. 自动化运营（RPA）"]},
+  {id:10,dimension:"ai_learning_will",type:"single",question:"您对系统学习 AI 提效工具的意愿？",options:["A. 无兴趣","B. 观望","C. 一般","D. 愿意深入学习","E. 迫切需求"]},
+  {id:11,dimension:"service_interest",type:"single",question:"对我们提供的 'AI + 身心灵内容加速方案' 的兴趣程度？",options:["A. 毫无兴趣","B. 低度兴趣","C. 视情况而定","D. 高度兴趣","E. 计划立即咨询"]},
+  {id:12,dimension:"budget",type:"single",question:"未来 12 个月，您计划在 AI 工具 / 服务上的预算？",options:["A. <$1,000","B. $1,000–3,000","C. $3,000–10,000","D. $10,000–30,000","E. >$30,000"]},
+  {id:13,dimension:"revenue_streams",type:"multi",question:"您当前的主要收入来源？（可多选）",options:["A. 广告 / 品牌合作","B. 付费社群","C. 线上课程","D. 实体产品","E. 赞赏 / 打赏"]},
+  {id:14,dimension:"current_income",type:"single",question:"当前月均自媒体收入区间？",options:["A. 无收入","B. <$1,000","C. $1,000–5,000","D. $5,000–20,000","E. >$20,000"]},
+  {id:15,dimension:"income_goal",type:"single",question:"未来 12 个月的月收入目标？",options:["A. <$1,000","B. $1,000–5,000","C. $5,000–20,000","D. $20,000–50,000","E. >$50,000"]},
+  {id:16,dimension:"support_needed",type:"multi",question:"您希望我们重点提供哪些支持？（可多选）",options:["A. 选题策划 / 趋势洞察","B. AI 内容生成工具","C. 自动化运营流程","D. 粉丝增长策略","E. 商业化变现设计","F. 技术培训 / 咨询"]},
+  {id:17,dimension:"consulting_interest",type:"single",question:"对 1:1 顾问 / 教练服务的兴趣？",options:["A. 无兴趣","B. 可能会考虑","C. 需要进一步了解","D. 感兴趣","E. 迫切需求"]},
+  {id:18,dimension:"payment_preference",type:"multi",question:"可接受的服务付费模式？（可多选）",options:["A. 订阅制","B. 项目制","C. 收益分成","D. 一次性采购","E. 其他"]},
+  {id:19,dimension:"cooperation_depth",type:"single",question:"希望与我们合作的深度？",options:["A. 仅使用工具","B. 工具 + 培训","C. 合作开发产品","D. 全案托管","E. 战略合伙"]},
+  {id:20,dimension:"trend_view",type:"single",question:"您对身心灵行业未来 2 年消费趋势的判断？",options:["A. 显著下降","B. 略有下降","C. 基本持平","D. 略有增长","E. 强劲增长"]},
+  {id:21,dimension:"competition_risk",type:"single",question:"您对身心灵自媒体赛道竞争的担忧程度？",options:["A. 毫无担忧","B. 轻度担忧","C. 中度担忧","D. 较高担忧","E. 极度担忧"]},
+  {id:22,dimension:"brand_clarity",type:"single",question:"个人品牌定位的清晰度？",options:["A. 完全不清晰","B. 初步模糊","C. 有基本方向","D. 较为清晰","E. 非常清晰"]},
+  {id:23,dimension:"team_growth",type:"single",question:"预计未来一年团队规模？",options:["A. 仅本人","B. 2–3 人","C. 4–6 人","D. 7–10 人","E. 10 人以上"]},
+  {id:24,dimension:"data_usage",type:"single",question:"在运营决策中使用数据分析的频率？",options:["A. 从不","B. 偶尔","C. 每月","D. 每周","E. 每天 / 实时"]},
+  {id:25,dimension:"primary_kpi",type:"single",question:"您目前最看重的核心 KPI？",options:["A. 阅读 / 播放量","B. 粉丝增长","C. 转化率","D. 收入","E. 品牌曝光"]},
+  {id:26,dimension:"intl_expansion",type:"single",question:"未来 2 年是否计划拓展国际市场？",options:["A. 完全不考虑","B. 暂无计划","C. 3 年后考虑","D. 1–2 年内启动","E. 已在布局"]},
+  {id:27,dimension:"target_audience",type:"multi",question:"您的主要受众群体是？（可多选）",options:["A. 城市白领","B. 大学生","C. 中老年群体","D. 小资女性","E. 海外华人","F. 其他"]},
+  {id:28,dimension:"success_metric",type:"single",question:"您衡量合作成功最重要的指标是？",options:["A. ROI 投资回报","B. 粉丝增长","C. 品牌影响力","D. 用户转化","E. 学习效果"]},
+  {id:29,dimension:"time_commitment",type:"single",question:"每周可投入到自媒体运营与学习的时间？",options:["A. <10 小时","B. 10–20 小时","C. 20–40 小时","D. 40–60 小时","E. 全职投入"]},
+  {id:30,dimension:"open_challenge",type:"open",question:"请简述您目前最大的挑战与对我们的期望。"}
 ];
 
 let current = 0;
-const answers = new Array(questions.length).fill(null);
+const answers = {};
 const container = document.getElementById('question-container');
 const progress = document.getElementById('progress');
 const nextBtn = document.getElementById('next-btn');
@@ -63,37 +63,46 @@ function renderQuestion() {
   progress.value = current;
   container.innerHTML = `<p class="question">${q.id}. ${q.question}</p>`;
   const list = document.createElement('div');
-  q.options.forEach(opt => {
-    const label = document.createElement('label');
-    const input = document.createElement('input');
-    input.type = q.multi ? 'checkbox' : 'radio';
-    input.name = 'opt';
-    const valueOnly = opt.replace(/^[A-Z]\.[ \u3000]?/, '');
-    input.value = valueOnly;
-    label.className = 'option';
-    label.appendChild(input);
-    label.append(opt);
-    if (!q.multi) {
-      label.addEventListener('click', () => {
-        input.checked = true;
-        handleNext();
-      });
-    }
-    list.appendChild(label);
-  });
-  container.appendChild(list);
-  if (answers[current]) {
-    if (q.multi) {
-      document.querySelectorAll('input[name=opt]').forEach(i => {
-        if (answers[current].includes(i.value)) i.checked = true;
-      });
-    } else {
-      const el = document.querySelector(`input[name=opt][value="${answers[current]}"]`);
-      if (el) el.checked = true;
+  if (q.type === 'open') {
+    const textarea = document.createElement('textarea');
+    textarea.id = 'open-text';
+    textarea.className = 'option';
+    textarea.rows = 4;
+    if (answers[q.dimension]) textarea.value = answers[q.dimension];
+    list.appendChild(textarea);
+  } else {
+    q.options.forEach(opt => {
+      const label = document.createElement('label');
+      const input = document.createElement('input');
+      input.type = q.type === 'multi' ? 'checkbox' : 'radio';
+      input.name = 'opt';
+      const valueOnly = opt.replace(/^[A-Z]\.[ \u3000]?/, '');
+      input.value = valueOnly;
+      label.className = 'option';
+      label.appendChild(input);
+      label.append(opt);
+      if (q.type === 'single') {
+        label.addEventListener('click', () => {
+          input.checked = true;
+          handleNext();
+        });
+      }
+      list.appendChild(label);
+    });
+    if (answers[q.dimension]) {
+      if (q.type === 'multi') {
+        document.querySelectorAll('input[name=opt]').forEach(i => {
+          if (answers[q.dimension].includes(i.value)) i.checked = true;
+        });
+      } else {
+        const el = document.querySelector(`input[name=opt][value="${answers[q.dimension]}"]`);
+        if (el) el.checked = true;
+      }
     }
   }
+  container.appendChild(list);
   prevBtn.style.display = current > 0 ? 'inline-block' : 'none';
-  nextBtn.style.display = q.multi ? 'inline-block' : 'none';
+  nextBtn.style.display = (q.type === 'multi' || q.type === 'open') ? 'inline-block' : 'none';
   nextBtn.textContent = current === questions.length - 1 ? '下一步' : '下一题';
 }
 
@@ -111,14 +120,19 @@ function showInfoForm() {
 function handleNext() {
   if (current < questions.length) {
     const q = questions[current];
-    const selected = q.multi ?
-      Array.from(document.querySelectorAll('input[name=opt]:checked')).map(i => i.value) :
-      document.querySelector('input[name=opt]:checked')?.value;
+    let selected;
+    if (q.type === 'multi') {
+      selected = Array.from(document.querySelectorAll('input[name=opt]:checked')).map(i => i.value);
+    } else if (q.type === 'single') {
+      selected = document.querySelector('input[name=opt]:checked')?.value;
+    } else {
+      selected = document.getElementById('open-text').value.trim();
+    }
     if (!selected || (Array.isArray(selected) && selected.length === 0)) {
       alert('请选择答案');
       return;
     }
-    answers[current] = selected;
+    answers[q.dimension] = selected;
     current++;
     renderQuestion();
   } else {

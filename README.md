@@ -5,11 +5,10 @@ requirements. The interface is presented in Chinese and styled in an
 iOS-inspired layout that adapts to mobile screens. The application
 provides two main pages:
 
-* **User survey** – a 30‑question form presented one question at a time with a
-  progress bar. Selecting an option automatically advances to the next
-  question (multi‑select questions use a button). Users can also return to the
-  previous question. After completing all questions, they provide their
-  contact information (name, e‑mail, WeChat and phone).
+* **User survey** – 30 questions 针对身心灵内容创作者的现状与需求。
+  问卷一次只显示一个问题并带有进度条，单选题点击选项后自动跳转
+  下一题，多选题和开放题需要点击“下一题”。所有问题完成后，用户会
+  填写联系信息（姓名、邮箱、微信号和手机号）。
 * **Admin panel** – displays a table with all collected submissions. Answers
   are stored and shown without the leading option letters (A/B/C...).
 

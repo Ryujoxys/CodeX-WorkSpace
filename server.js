@@ -53,7 +53,14 @@ function serveAdmin(res) {
       try { users = JSON.parse(file); } catch(e) {}
     }
     let rows = users.map(u => {
-      const ans = Array.isArray(u.answers) ? u.answers.join('；') : (u.answers || '');
+      let ans = '';
+      if (u.answers && typeof u.answers === 'object' && !Array.isArray(u.answers)) {
+        ans = Object.entries(u.answers).map(([k,v]) => Array.isArray(v) ? `${k}:${v.join('、')}` : `${k}:${v}`).join('；');
+      } else if (Array.isArray(u.answers)) {
+        ans = u.answers.join('；');
+      } else {
+        ans = u.answers || '';
+      }
       return `<tr><td>${u.name||''}</td><td>${u.email||''}</td><td>${u.wechat||''}</td><td>${u.phone||''}</td><td>${ans}</td></tr>`;
     }).join('\n');
     let html = `<!DOCTYPE html>
