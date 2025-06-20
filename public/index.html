@@ -1,16 +1,276 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>用户调查</title>
-<link rel="stylesheet" href="/style.css">
+<title>用户调查 - CodeX WorkSpace</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+#question-container {
+  margin-bottom: 30px;
+  min-height: 300px;
+}
+
+.question {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.option {
+  display: block;
+  background: white;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.option:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.option input {
+  margin-right: 12px;
+  transform: scale(1.2);
+}
+
+.option input:checked + span,
+.option:has(input:checked) {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-color: #667eea;
+}
+
+textarea.option {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  cursor: text;
+}
+
+textarea.option:focus {
+  outline: none;
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+#progress-wrapper {
+  margin-bottom: 30px;
+}
+
+.progress-container {
+  background: #f0f0f0;
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+#progress {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+#progress::-webkit-progress-bar {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+#progress::-webkit-progress-value {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+#btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+button {
+  flex: 1;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#prev-btn {
+  background: #f8f9ff;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+#prev-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+#next-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+#next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.form-section {
+  background: #f8f9ff;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.form-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-section input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #f0f0f0;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.form-section input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+@media (max-width: 768px) {
+  #app {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .question {
+    font-size: 18px;
+  }
+  
+  .option {
+    padding: 12px 16px;
+  }
+  
+  #btns {
+    flex-direction: column;
+  }
+}
+</style>
 </head>
 <body>
 <main id="app">
-<h1>用户调查</h1>
+<h1>用户调查问卷</h1>
+<div class="subtitle">身心灵内容创作者能力评估 · CodeX WorkSpace</div>
 <div id="question-container"></div>
-<div id="progress-wrapper"><progress id="progress" value="0" max="30"></progress></div>
+<div id="progress-wrapper">
+  <div class="progress-container">
+    <progress id="progress" value="0" max="30"></progress>
+  </div>
+  <div class="progress-text">
+    <span id="progress-text">第 1 题，共 30 题</span>
+  </div>
+</div>
 <div id="btns"><button id="prev-btn">上一题</button><button id="next-btn">下一题</button></div>
 </main>
 <script>
@@ -54,6 +314,22 @@ const progress = document.getElementById('progress');
 const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
 
+// 更新选项视觉状态
+function updateOptionStyles() {
+  document.querySelectorAll('.option').forEach(label => {
+    const input = label.querySelector('input');
+    if (input && input.checked) {
+      label.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+      label.style.color = 'white';
+      label.style.borderColor = '#667eea';
+    } else {
+      label.style.background = 'white';
+      label.style.color = '#333';
+      label.style.borderColor = '#f0f0f0';
+    }
+  });
+}
+
 function renderQuestion() {
   if (current >= questions.length) {
     showInfoForm();
@@ -61,6 +337,7 @@ function renderQuestion() {
   }
   const q = questions[current];
   progress.value = current;
+  document.getElementById('progress-text').textContent = `第 ${current + 1} 题，共 ${questions.length} 题`;
   container.innerHTML = `<p class="question">${q.id}. ${q.question}</p>`;
   const list = document.createElement('div');
   if (q.type === 'open') {
@@ -81,14 +358,30 @@ function renderQuestion() {
       label.className = 'option';
       label.appendChild(input);
       label.append(opt);
-      if (q.type === 'single') {
-        label.addEventListener('click', () => {
+      
+      // 为整个label添加点击事件
+      label.addEventListener('click', (e) => {
+        // 阻止默认行为，手动控制选中状态
+        e.preventDefault();
+        
+        if (q.type === 'single') {
+          // 单选：取消其他选项，选中当前项
+          document.querySelectorAll('input[name=opt]').forEach(i => i.checked = false);
           input.checked = true;
-          handleNext();
-        });
-      }
+          // 单选题选中后自动进入下一题
+          setTimeout(() => handleNext(), 200);
+        } else {
+          // 多选：切换当前项状态
+          input.checked = !input.checked;
+        }
+        
+        // 更新视觉状态
+        updateOptionStyles();
+      });
+      
       list.appendChild(label);
     });
+    // 恢复之前的选择
     if (answers[q.dimension]) {
       if (q.type === 'multi') {
         document.querySelectorAll('input[name=opt]').forEach(i => {
@@ -98,6 +391,8 @@ function renderQuestion() {
         const el = document.querySelector(`input[name=opt][value="${answers[q.dimension]}"]`);
         if (el) el.checked = true;
       }
+      // 更新视觉状态
+      setTimeout(() => updateOptionStyles(), 100);
     }
   }
   container.appendChild(list);
@@ -108,13 +403,19 @@ function renderQuestion() {
 
 function showInfoForm() {
   progress.value = questions.length;
-  container.innerHTML = `<label>称呼：<input type="text" id="name" required></label>
-<label>电子邮件：<input type="email" id="email" required></label>
-<label>微信号：<input type="text" id="wechat" required></label>
-<label>手机号：<input type="tel" id="phone" required></label>`;
+  document.getElementById('progress-text').textContent = `完成问卷，请填写联系信息`;
+  container.innerHTML = `
+    <div class="form-section">
+      <h2>📝 请填写您的联系信息</h2>
+      <label>称呼：<input type="text" id="name" required placeholder="请输入您的称呼"></label>
+      <label>电子邮件：<input type="email" id="email" required placeholder="请输入您的邮箱地址"></label>
+      <label>微信号：<input type="text" id="wechat" required placeholder="请输入您的微信号"></label>
+      <label>手机号：<input type="tel" id="phone" required placeholder="请输入您的手机号"></label>
+    </div>
+  `;
   nextBtn.style.display = 'inline-block';
   prevBtn.style.display = 'inline-block';
-  nextBtn.textContent = '提交';
+  nextBtn.textContent = '🚀 提交问卷';
 }
 
 function handleNext() {
@@ -123,14 +424,19 @@ function handleNext() {
     let selected;
     if (q.type === 'multi') {
       selected = Array.from(document.querySelectorAll('input[name=opt]:checked')).map(i => i.value);
+      if (selected.length === 0) {
+        return; // 多选题允许不选择，直接返回不提示
+      }
     } else if (q.type === 'single') {
       selected = document.querySelector('input[name=opt]:checked')?.value;
+      if (!selected) {
+        return; // 单选题未选择时直接返回，不提示
+      }
     } else {
       selected = document.getElementById('open-text').value.trim();
-    }
-    if (!selected || (Array.isArray(selected) && selected.length === 0)) {
-      alert('请选择答案');
-      return;
+      if (!selected) {
+        return; // 开放题未填写时直接返回，不提示
+      }
     }
     answers[q.dimension] = selected;
     current++;

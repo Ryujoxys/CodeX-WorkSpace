@@ -1,1 +1,342 @@
-[]
+[
+  {
+    "answers": {
+      "profile_experience": "少于 1 年",
+      "channel_mix": [
+        "小红书",
+        "抖音 / TikTok",
+        "公众号",
+        "B 站 / YouTube",
+        "Podcast / 音频平台"
+      ],
+      "audience_size": "1–5 万",
+      "content_frequency": "4–8 条",
+      "pain_points": [
+        "时间管理",
+        "选题灵感枯竭",
+        "剪辑 / 技术难题",
+        "流量获取困难",
+        "变现方案不足"
+      ],
+      "industry_knowledge": "完全小白",
+      "learning_interests": [
+        "冥想 / 正念",
+        "能量疗愈",
+        "塔罗 / 占星"
+      ],
+      "ai_usage": "偶尔尝试",
+      "ai_tools": [
+        "文案 / 脚本生成",
+        "图像生成",
+        "视频生成 / 剪辑",
+        "语音合成 / 配音",
+        "数据分析 / 选题洞察",
+        "自动化运营（RPA）"
+      ],
+      "ai_learning_will": "一般",
+      "service_interest": "高度兴趣",
+      "budget": "$3,000–10,000",
+      "revenue_streams": [
+        "广告 / 品牌合作",
+        "赞赏 / 打赏"
+      ],
+      "current_income": "$1,000–5,000",
+      "income_goal": "$5,000–20,000",
+      "support_needed": [
+        "选题策划 / 趋势洞察",
+        "AI 内容生成工具",
+        "自动化运营流程",
+        "粉丝增长策略",
+        "商业化变现设计",
+        "技术培训 / 咨询"
+      ],
+      "consulting_interest": "需要进一步了解",
+      "payment_preference": [
+        "订阅制",
+        "项目制",
+        "收益分成",
+        "一次性采购"
+      ],
+      "cooperation_depth": "工具 + 培训",
+      "trend_view": "略有增长",
+      "competition_risk": "较高担忧",
+      "brand_clarity": "完全不清晰",
+      "team_growth": "2–3 人",
+      "data_usage": "偶尔",
+      "primary_kpi": "收入",
+      "intl_expansion": "暂无计划",
+      "target_audience": [
+        "小资女性"
+      ],
+      "success_metric": "ROI 投资回报",
+      "time_commitment": "10–20 小时",
+      "open_challenge": "所有"
+    },
+    "name": "糖豆人",
+    "email": "ryujo.ryujo@gmail.com",
+    "wechat": "ryujo123",
+    "phone": "18840600189",
+    "id": 1,
+    "submitted_at": "2025-06-20T08:11:21.949Z"
+  },
+  {
+    "answers": {
+      "profile_experience": "少于 1 年",
+      "channel_mix": [
+        "小红书"
+      ],
+      "audience_size": "<1,000",
+      "content_frequency": "<4 条",
+      "pain_points": [
+        "时间管理"
+      ],
+      "industry_knowledge": "完全小白",
+      "learning_interests": [
+        "能量疗愈"
+      ],
+      "ai_usage": "偶尔尝试",
+      "ai_tools": [
+        "图像生成"
+      ],
+      "ai_learning_will": "观望",
+      "service_interest": "低度兴趣",
+      "budget": "$1,000–3,000",
+      "revenue_streams": [
+        "付费社群"
+      ],
+      "current_income": "<$1,000",
+      "income_goal": "$1,000–5,000",
+      "support_needed": [
+        "AI 内容生成工具"
+      ],
+      "consulting_interest": "可能会考虑",
+      "payment_preference": [
+        "项目制"
+      ],
+      "cooperation_depth": "工具 + 培训",
+      "trend_view": "略有下降",
+      "competition_risk": "轻度担忧",
+      "brand_clarity": "初步模糊",
+      "team_growth": "2–3 人",
+      "data_usage": "偶尔",
+      "primary_kpi": "粉丝增长",
+      "intl_expansion": "暂无计划",
+      "target_audience": [
+        "大学生"
+      ],
+      "success_metric": "粉丝增长",
+      "time_commitment": "10–20 小时",
+      "open_challenge": "111"
+    },
+    "name": "PUBG",
+    "email": "1707272@qq.com",
+    "wechat": "123",
+    "phone": "15842719280",
+    "id": 2,
+    "submitted_at": "2025-06-20T08:26:34.191Z"
+  },
+  {
+    "answers": {
+      "profile_experience": "少于 1 年",
+      "channel_mix": [
+        "抖音 / TikTok",
+        "公众号"
+      ],
+      "audience_size": "1,000–10,000",
+      "content_frequency": "4–8 条",
+      "pain_points": [
+        "选题灵感枯竭"
+      ],
+      "industry_knowledge": "入门了解",
+      "learning_interests": [
+        "灵性工作坊设计"
+      ],
+      "ai_usage": "偶尔尝试",
+      "ai_tools": [
+        "图像生成",
+        "视频生成 / 剪辑"
+      ],
+      "ai_learning_will": "一般",
+      "service_interest": "计划立即咨询",
+      "budget": "$10,000–30,000",
+      "revenue_streams": [
+        "线上课程",
+        "实体产品"
+      ],
+      "current_income": "$1,000–5,000",
+      "income_goal": "$20,000–50,000",
+      "support_needed": [
+        "自动化运营流程",
+        "粉丝增长策略"
+      ],
+      "consulting_interest": "感兴趣",
+      "payment_preference": [
+        "一次性采购"
+      ],
+      "cooperation_depth": "合作开发产品",
+      "trend_view": "基本持平",
+      "competition_risk": "较高担忧",
+      "brand_clarity": "有基本方向",
+      "team_growth": "7–10 人",
+      "data_usage": "每天 / 实时",
+      "primary_kpi": "品牌曝光",
+      "intl_expansion": "已在布局",
+      "target_audience": [
+        "大学生",
+        "中老年群体",
+        "小资女性"
+      ],
+      "success_metric": "用户转化",
+      "time_commitment": "20–40 小时",
+      "open_challenge": "好"
+    },
+    "name": "冒险岛世界",
+    "email": "1960743172@qq.com",
+    "wechat": "ryujo123234",
+    "phone": "18840600180",
+    "id": 3,
+    "submitted_at": "2025-06-20T08:54:01.342Z"
+  },
+  {
+    "id": 4,
+    "name": "灵觉小筑",
+    "email": "insight@mindbodylab.co",
+    "wechat": "mindbodylab",
+    "phone": "13800008888",
+    "submitted_at": "2025-06-20T09:03:42.202Z",
+    "answers": {
+      "profile_experience": "3–5 年",
+      "channel_mix": [
+        "抖音 / TikTok",
+        "B 站 / YouTube"
+      ],
+      "audience_size": "5–20 万",
+      "content_frequency": "16–30 条",
+      "pain_points": [
+        "流量获取困难",
+        "变现方案不足"
+      ],
+      "industry_knowledge": "基础熟悉",
+      "learning_interests": [
+        "灵性工作坊设计",
+        "东方养生（瑜伽 / 气功）"
+      ],
+      "ai_usage": "每周使用",
+      "ai_tools": [
+        "文案 / 脚本生成",
+        "图像生成",
+        "数据分析 / 选题洞察"
+      ],
+      "ai_learning_will": "愿意深入学习",
+      "service_interest": "视情况而定",
+      "budget": "$10,000–30,000",
+      "revenue_streams": [
+        "广告 / 品牌合作",
+        "线上课程",
+        "付费社群"
+      ],
+      "current_income": "$5,000–20,000",
+      "income_goal": "$20,000–50,000",
+      "support_needed": [
+        "AI 内容生成工具",
+        "粉丝增长策略",
+        "商业化变现设计"
+      ],
+      "consulting_interest": "感兴趣",
+      "payment_preference": [
+        "订阅制",
+        "项目制"
+      ],
+      "cooperation_depth": "合作开发产品",
+      "trend_view": "强劲增长",
+      "competition_risk": "中度担忧",
+      "brand_clarity": "较为清晰",
+      "team_growth": "4–6 人",
+      "data_usage": "每周",
+      "primary_kpi": "粉丝增长",
+      "intl_expansion": "1–2 年内启动",
+      "target_audience": [
+        "城市白领",
+        "海外华人"
+      ],
+      "success_metric": "用户转化",
+      "time_commitment": "40–60 小时",
+      "open_challenge": "希望快速破圈并稳定变现"
+    }
+  },
+  {
+    "id": 5,
+    "name": "灵源研究社",
+    "email": "founder@sourceawakening.io",
+    "wechat": "source_awaken",
+    "phone": "18666667777",
+    "submitted_at": "2025-06-20T10:22:17.615Z",
+    "answers": {
+      "profile_experience": "10 年以上",
+      "channel_mix": [
+        "小红书",
+        "抖音 / TikTok",
+        "公众号",
+        "B 站 / YouTube",
+        "Podcast / 音频平台"
+      ],
+      "audience_size": "20 万以上",
+      "content_frequency": "30 条以上",
+      "pain_points": [
+        "时间管理",
+        "自动化运营流程缺失"
+      ],
+      "industry_knowledge": "行业专家",
+      "learning_interests": [
+        "东方养生（瑜伽 / 气功）"
+      ],
+      "ai_usage": "每日使用",
+      "ai_tools": [
+        "文案 / 脚本生成",
+        "图像生成",
+        "视频生成 / 剪辑",
+        "语音合成 / 配音",
+        "数据分析 / 选题洞察",
+        "自动化运营（RPA）"
+      ],
+      "ai_learning_will": "迫切需求",
+      "service_interest": "计划立即咨询",
+      "budget": ">$30,000",
+      "revenue_streams": [
+        "广告 / 品牌合作",
+        "线上课程",
+        "实体产品",
+        "付费社群"
+      ],
+      "current_income": ">$20,000",
+      "income_goal": ">$50,000",
+      "support_needed": [
+        "自动化运营流程",
+        "AI 内容生成工具",
+        "商业化变现设计",
+        "技术培训 / 咨询"
+      ],
+      "consulting_interest": "迫切需求",
+      "payment_preference": [
+        "项目制",
+        "收益分成"
+      ],
+      "cooperation_depth": "战略合伙",
+      "trend_view": "强劲增长",
+      "competition_risk": "轻度担忧",
+      "brand_clarity": "非常清晰",
+      "team_growth": "10 人以上",
+      "data_usage": "每天 / 实时",
+      "primary_kpi": "ROI 投资回报",
+      "intl_expansion": "已在布局",
+      "target_audience": [
+        "城市白领",
+        "小资女性",
+        "海外华人"
+      ],
+      "success_metric": "品牌影响力",
+      "time_commitment": "全职投入",
+      "open_challenge": "需要大规模自动化与全球化支持"
+    }
+  }
+]
