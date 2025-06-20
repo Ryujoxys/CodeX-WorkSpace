@@ -68,7 +68,8 @@ function renderQuestion() {
     const input = document.createElement('input');
     input.type = q.multi ? 'checkbox' : 'radio';
     input.name = 'opt';
-    input.value = opt;
+    const valueOnly = opt.replace(/^[A-Z]\.[ \u3000]?/, '');
+    input.value = valueOnly;
     label.className = 'option';
     label.appendChild(input);
     label.append(opt);

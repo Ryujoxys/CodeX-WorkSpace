@@ -52,7 +52,10 @@ function serveAdmin(res) {
     if (!err) {
       try { users = JSON.parse(file); } catch(e) {}
     }
-    let rows = users.map(u => `<tr><td>${u.name||''}</td><td>${u.email||''}</td><td>${u.wechat||''}</td><td>${u.phone||''}</td><td>${JSON.stringify(u.answers||u.answer||'')}</td></tr>`).join('\n');
+    let rows = users.map(u => {
+      const ans = Array.isArray(u.answers) ? u.answers.join('；') : (u.answers || '');
+      return `<tr><td>${u.name||''}</td><td>${u.email||''}</td><td>${u.wechat||''}</td><td>${u.phone||''}</td><td>${ans}</td></tr>`;
+    }).join('\n');
     let html = `<!DOCTYPE html>
 <html>
 <head>

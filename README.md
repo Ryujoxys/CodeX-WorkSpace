@@ -10,7 +10,8 @@ provides two main pages:
   question (multi‑select questions use a button). Users can also return to the
   previous question. After completing all questions, they provide their
   contact information (name, e‑mail, WeChat and phone).
-* **Admin panel** – displays a table with all collected submissions.
+* **Admin panel** – displays a table with all collected submissions. Answers
+  are stored and shown without the leading option letters (A/B/C...).
 
 ## Running the server
 
