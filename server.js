@@ -57,11 +57,13 @@ function serveAdmin(res) {
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>管理员面板</title>
 <style>
-body{font-family:Arial, sans-serif;margin:40px;}
-table{border-collapse:collapse;width:100%;}
-th,td{border:1px solid #ddd;padding:8px;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:20px;background:#f2f2f7;}
+table{border-collapse:collapse;width:100%;background:#fff;}
+th,td{border:1px solid #ddd;padding:8px;text-align:left;}
+th{background:#fafafa;}
 </style>
 </head>
 <body>

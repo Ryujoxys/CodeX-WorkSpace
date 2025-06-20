@@ -2,14 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>用户调查</title>
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<main id="app">
 <h1>用户调查</h1>
 <div id="question-container"></div>
 <div id="progress-wrapper"><progress id="progress" value="0" max="30"></progress></div>
-<button id="next-btn">下一题</button>
+<div id="btns"><button id="prev-btn">上一题</button><button id="next-btn">下一题</button></div>
+</main>
 <script>
 const questions = [
   {id:1,question:"您对当前身心灵行业整体发展的了解程度如何？",options:["A. 完全不了解","B. 略有了解","C. 一般了解","D. 较为了解","E. 非常熟悉"]},
@@ -45,10 +48,11 @@ const questions = [
 ];
 
 let current = 0;
-const answers = [];
+const answers = new Array(questions.length).fill(null);
 const container = document.getElementById('question-container');
 const progress = document.getElementById('progress');
 const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
 
 function renderQuestion() {
   if (current >= questions.length) {
@@ -57,7 +61,7 @@ function renderQuestion() {
   }
   const q = questions[current];
   progress.value = current;
-  container.innerHTML = `<p>${q.id}. ${q.question}</p>`;
+  container.innerHTML = `<p class="question">${q.id}. ${q.question}</p>`;
   const list = document.createElement('div');
   q.options.forEach(opt => {
     const label = document.createElement('label');
@@ -65,12 +69,30 @@ function renderQuestion() {
     input.type = q.multi ? 'checkbox' : 'radio';
     input.name = 'opt';
     input.value = opt;
+    label.className = 'option';
     label.appendChild(input);
     label.append(opt);
-    label.className = 'option';
+    if (!q.multi) {
+      label.addEventListener('click', () => {
+        input.checked = true;
+        handleNext();
+      });
+    }
     list.appendChild(label);
   });
   container.appendChild(list);
+  if (answers[current]) {
+    if (q.multi) {
+      document.querySelectorAll('input[name=opt]').forEach(i => {
+        if (answers[current].includes(i.value)) i.checked = true;
+      });
+    } else {
+      const el = document.querySelector(`input[name=opt][value="${answers[current]}"]`);
+      if (el) el.checked = true;
+    }
+  }
+  prevBtn.style.display = current > 0 ? 'inline-block' : 'none';
+  nextBtn.style.display = q.multi ? 'inline-block' : 'none';
   nextBtn.textContent = current === questions.length - 1 ? '下一步' : '下一题';
 }
 
@@ -80,10 +102,12 @@ function showInfoForm() {
 <label>电子邮件：<input type="email" id="email" required></label>
 <label>微信号：<input type="text" id="wechat" required></label>
 <label>手机号：<input type="tel" id="phone" required></label>`;
+  nextBtn.style.display = 'inline-block';
+  prevBtn.style.display = 'inline-block';
   nextBtn.textContent = '提交';
 }
 
-nextBtn.addEventListener('click', () => {
+function handleNext() {
   if (current < questions.length) {
     const q = questions[current];
     const selected = q.multi ?
@@ -93,7 +117,7 @@ nextBtn.addEventListener('click', () => {
       alert('请选择答案');
       return;
     }
-    answers.push(selected);
+    answers[current] = selected;
     current++;
     renderQuestion();
   } else {
@@ -109,6 +133,14 @@ nextBtn.addEventListener('click', () => {
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify(data)
     }).then(() => window.location = '/thanks.html');
+  }
+}
+
+nextBtn.addEventListener('click', handleNext);
+prevBtn.addEventListener('click', () => {
+  if (current > 0) {
+    current--;
+    renderQuestion();
   }
 });
 

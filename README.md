@@ -1,12 +1,15 @@
 # CodeX-WorkSpace
 
 This repository contains a simple Node.js project for collecting user
-requirements. The interface is presented in Chinese. The application
+requirements. The interface is presented in Chinese and styled in an
+iOS-inspired layout that adapts to mobile screens. The application
 provides two main pages:
 
 * **User survey** – a 30‑question form presented one question at a time with a
-  progress bar. After answering all questions, users provide their contact
-  information (name, e‑mail, WeChat and phone).
+  progress bar. Selecting an option automatically advances to the next
+  question (multi‑select questions use a button). Users can also return to the
+  previous question. After completing all questions, they provide their
+  contact information (name, e‑mail, WeChat and phone).
 * **Admin panel** – displays a table with all collected submissions.
 
 ## Running the server
