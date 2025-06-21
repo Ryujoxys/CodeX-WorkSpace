@@ -27,3 +27,7 @@ The survey is available at `http://localhost:3000/` and the admin panel at
 analysis report.
 
 All submissions are stored in `data/users.json`.
+
+## Migration plan
+
+The repository includes a guide for moving this HTML project to a Next.js + independent backend architecture. See [docs/Nextjs_Migration_Plan.md](docs/Nextjs_Migration_Plan.md) for details on the proposed stack, directory structure, API design and mobile adaptation.
